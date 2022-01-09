@@ -4,9 +4,13 @@ import random as rand
 
 
 def get_title(titleFilePath):
-    with open(titleFilePath, "r") as f:
-        line = f.read()
-        print(line)
+    try:
+        with open(titleFilePath, "r") as f:
+            line = f.read()
+            print(line)
+    except FileNotFoundError:
+        print("File could not be found.\n")
+        
 
 
 def get_random_word(randomWordList):
@@ -37,12 +41,15 @@ def load_hangman_drawings(hangmanDrawingsFilePath,num):
     except FileNotFoundError:
         print("File could not be found.\n")
 
+
 def get_guess():
     guess = ""
     guess = input("Guess a letter: ")
     while not guess.isalnum():
         guess = input("Please enter only letters of the alphabet: ")
     return guess
+
+
 def startGame():
     mistakes = 0
     letters_mistakes = []
