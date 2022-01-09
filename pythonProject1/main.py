@@ -23,9 +23,17 @@ def get_random_word(randomWordList):
 
 def load_hangman_drawings(hangmanDrawingsFilePath,num):
     try:
+        array = []
         with open(hangmanDrawingsFilePath, 'r') as f:
             drawings = f.readlines()
-            print("".join(drawings[num*8:(num*8)+8]))
+            tempArray = []
+            for line in drawings:
+                if not line == "\n":
+                    tempArray.append(line)
+                else:
+                    array.append("".join(tempArray))
+                    tempArray = []
+            print(array[num])
     except FileNotFoundError:
         print("File could not be found.\n")
 
