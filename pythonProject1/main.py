@@ -71,7 +71,7 @@ def get_guess():
 """
 In the final function which is the main function that connects everything together we initialise a "mistakes" variable and the letters that the user mistakes storing them in a list.
 First of all we call the function get_title to display the title giving it the file path as parameter.
-We get a random word from the get_random_word function and store it in a variable.
+We get a random word from the get_random_word function and store it in a variable. 
 Once we get the random word we make the correct_list which is the list that displays the hidden word and will reveal the hidden word everytime we input a correct letter.
 When the user inputs a letter it will be saved in the mistake letters list or if correct it will be added in the correct list
 For every letter that is not in the word an error will be displayed and it will loop the guess question until the user runs out of lives and the game will output a good bye message.
